@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIPP — Sistem Informasi Pelayanan Publik SMP Negeri 1 [Nama Kota]</title>
+<title>SIPP — Sistem Informasi Pelayanan Publik UPT SMP Negeri 2 Pulau Punjung</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -149,7 +149,9 @@
   #pengajuan .section-head h2{color:#fff;}
   #pengajuan .section-head p{color:rgba(255,255,255,.75);}
   .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start;}
-  .form-card{background:#fff; color:var(--ink); border-radius:16px; padding:26px;}
+  .form-card{background:#fff; color:var(--ink); border-radius:16px; padding:18px;}
+  .gform-wrap{width:100%; overflow:hidden; border-radius:10px;}
+  .gform-wrap iframe{width:100%; height:1416px; max-height:80vh; border:none; display:block;}
   .field{margin-bottom:16px;}
   .field label{display:block; font-size:.85rem; font-weight:700; margin-bottom:6px; color:var(--teal-900);}
   .field input, .field select, .field textarea{width:100%; border:1.5px solid var(--line); border-radius:9px; padding:11px 13px; font-family:inherit; font-size:.92rem; min-height:44px;}
@@ -222,8 +224,8 @@
 <div class="util-bar">
   <div class="util-inner">
     <div class="util-left">
-      <span>Senin–Jumat, 07.00–15.00 WIB</span>
-      <span>Telp (0xxx) xxx-xxx</span>
+      <span>Senin–Jumat, 08.00–15.00 WIB</span>
+      <span>Telp 0813-6409-530</span>
     </div>
     <a href="#perlindungan" class="report-pill">⚠ Laporkan Kekerasan/Perundungan</a>
     <div class="a11y-toolbar" role="group" aria-label="Pengaturan aksesibilitas">
@@ -240,7 +242,7 @@
     <div class="brand">
       <div class="brand-mark" aria-hidden="true">SP</div>
       <div class="brand-text">
-        <div class="name">SIPP SMPN 1 [Nama Kota]</div>
+        <div class="name">SIPP UPT SMPN 2 Pulau Punjung</div>
         <div class="sub">Sistem Informasi Pelayanan Publik Sekolah</div>
       </div>
     </div>
@@ -274,7 +276,7 @@
   <div class="wrap">
     <div>
       <span class="eyebrow"><span class="dot"></span> 18 layanan, satu pintu, untuk siswa & orang tua</span>
-      <h1>Urus layanan sekolah SMPN 1 [Nama Kota] tanpa antre, dari laptop maupun HP.</h1>
+      <h1>Urus layanan sekolah SMPN 2 Pulau Punjung tanpa antre, dari laptop maupun HP.</h1>
       <p class="lede">Dari PPDB, surat-menyurat, beasiswa, hingga bimbingan konseling — semua informasi dan pengajuan layanan sekolah ada di sini.</p>
       <div class="hero-actions">
         <a href="#layanan" class="btn-primary">Lihat Semua Layanan →</a>
@@ -351,45 +353,22 @@
     <div class="section-head">
       <span class="kicker">Formulir Layanan</span>
       <h2>Ajukan layanan administratif</h2>
-      <p>Formulir ini demo antarmuka — versi produksi perlu backend agar data tersimpan dan bisa ditindaklanjuti Tata Usaha. Untuk layanan non-administratif (asesmen, BK, ekskul, dll), lihat detail layanan untuk kontak unit terkait.</p>
+      <p>Isi formulir di bawah ini — data langsung tersimpan dan bisa ditindaklanjuti Tata Usaha. Untuk layanan non-administratif (asesmen, BK, ekskul, dll), lihat detail layanan untuk kontak unit terkait.</p>
     </div>
     <div class="form-grid">
       <div class="form-card">
-        <form id="complaintForm">
-          <div class="field">
-            <label for="cLayanan">Jenis layanan</label>
-            <select id="cLayanan"></select>
-          </div>
-          <div class="field">
-            <label for="cName">Nama siswa</label>
-            <input type="text" id="cName" required placeholder="Nama lengkap siswa">
-          </div>
-          <div class="field">
-            <label for="cKelas">Kelas</label>
-            <input type="text" id="cKelas" required placeholder="mis. VIII-A">
-          </div>
-          <div class="field">
-            <label for="cContact">Nomor HP orang tua/wali</label>
-            <input type="text" id="cContact" required placeholder="08xxxxxxxxxx">
-          </div>
-          <div class="field">
-            <label for="cMessage">Keterangan tambahan</label>
-            <textarea id="cMessage" placeholder="Jelaskan kebutuhan Anda (opsional)"></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Kirim Pengajuan</button>
-          <p class="form-note">Nomor tiket akan muncul di panel sebelah setelah pengajuan terkirim.</p>
-        </form>
+        <div class="gform-wrap">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScI8mOQ14ddApP2IYsnjGTN7LhYesL37gu7GUWG8wM7whoB0Q/viewform?embedded=true" title="Formulir Pengajuan Layanan SIPP" loading="lazy">Memuat formulir…</iframe>
+        </div>
+        <p class="form-note">Pastikan memilih "Jenis Layanan" yang sesuai di dalam formulir sebelum mengirim.</p>
       </div>
       <div class="side-info">
         <h3>Kontak cepat</h3>
-        <div class="contact-line"><span class="ic">☎</span><span>Tata Usaha: (0xxx) xxx-xxx (jam kerja)</span></div>
-        <div class="contact-line"><span class="ic">✉</span><span>tu@smpn1contoh.sch.id</span></div>
-        <div class="contact-line"><span class="ic">📍</span><span>SMP Negeri 1 [Nama Kota], Jl. Pendidikan No. 1</span></div>
+        <div class="contact-line"><span class="ic">☎</span><span>Tata Usaha: 0813-6409-530 (jam kerja)</span></div>
+        <div class="contact-line"><span class="ic">✉</span><span>uptsmpnpulaupunjung@gmail.com</span></div>
+        <div class="contact-line"><span class="ic">📍</span><span>SMP Negeri 2 Pulau Punjung, Jl. Raya Lama Sikabau, Dharmasraya</span></div>
         <div class="info-note">Untuk layanan Akademik & Kurikulum, Kesiswaan & Konseling, silakan hubungi wali kelas atau guru BK langsung — tidak perlu mengisi formulir ini.</div>
-        <h3 style="margin-top:20px;">Tiket Anda (sesi ini)</h3>
-        <div class="status-list" id="ticketList">
-          <p class="empty-note">Belum ada pengajuan terkirim.</p>
-        </div>
+        <div class="info-note">Sudah mengirim formulir? Untuk menanyakan status, hubungi Tata Usaha dan sebutkan nama siswa serta jenis layanan yang diajukan.</div>
       </div>
     </div>
   </div>
@@ -449,7 +428,7 @@
       </details>
       <details class="faq-item">
         <summary class="faq-q">Bagaimana cara mengecek status pengajuan saya? <span class="plus">+</span></summary>
-        <p class="faq-a">Simpan nomor tiket yang muncul setelah pengajuan, lalu hubungi Tata Usaha dengan menyertakan nomor tersebut.</p>
+        <p class="faq-a">Hubungi Tata Usaha dan sebutkan nama siswa serta jenis layanan yang diajukan — petugas akan mengecek langsung di data pengajuan.</p>
       </details>
     </div>
   </div>
@@ -460,13 +439,13 @@
 <footer id="kontak">
   <div class="wrap footer-grid">
     <div>
-      <strong>SIPP SMP Negeri 1 [Nama Kota]</strong><br>
-      Jl. Pendidikan No. 1, [Nama Kota]<br>
-      (0xxx) xxx-xxx · tu@smpn1contoh.sch.id
+      <strong>SIPP UPT SMP Negeri 2 Pulau Punjung</strong><br>
+      Jl. Raya Lama Sikabau, Dharmasraya<br>
+      0813-6409-530 · uptsmpnpulaupunjung@gmail.com
     </div>
     <div>
-      Jam layanan: Senin–Jumat, 07.00–15.00 WIB<br>
-      © 2026 SMP Negeri 1 [Nama Kota]. Prototipe tugas sekolah.
+      Jam layanan: Senin–Jumat, 08.00–15.00 WIB<br>
+      © 2026 UPT SMP Negeri 2 Pulau Punjung. Fauzul Azmi.
     </div>
   </div>
 </footer>
@@ -556,10 +535,6 @@ function doSearch(val){
 document.getElementById('heroSearchBtn').addEventListener('click', ()=>doSearch(document.getElementById('heroSearch').value));
 document.getElementById('heroSearch').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); doSearch(e.target.value);} });
 
-// Populate the "jenis layanan" select with form-based services only
-const cLayanan = document.getElementById('cLayanan');
-cLayanan.innerHTML = layananData.filter(l=>l.form).map(l=>`<option value="${l.id}">${l.title}</option>`).join('');
-
 // Detail dialog
 const dialog = document.getElementById('detail');
 const detailHead = document.getElementById('detailHead');
@@ -591,7 +566,6 @@ grid.addEventListener('click', e=>{
 document.getElementById('detailFooter').addEventListener('click', e=>{
   const btn = e.target.closest('#applyBtn');
   if(!btn) return;
-  cLayanan.value = btn.dataset.id;
   dialog.close();
   document.getElementById('pengajuan').scrollIntoView({behavior:'smooth'});
 });
@@ -623,22 +597,6 @@ contrastBtn.addEventListener('click', ()=>{
   const isHigh = root.getAttribute('data-contrast')==='high';
   root.setAttribute('data-contrast', isHigh ? 'normal' : 'high');
   contrastBtn.setAttribute('aria-pressed', isHigh ? 'false' : 'true');
-});
-
-// Form submit (in-memory demo)
-let ticketCount = 0;
-const ticketList = document.getElementById('ticketList');
-document.getElementById('complaintForm').addEventListener('submit', e=>{
-  e.preventDefault();
-  ticketCount++;
-  const code = 'SP-' + String(Date.now()).slice(-6);
-  const layananTitle = cLayanan.options[cLayanan.selectedIndex].text;
-  if(ticketCount===1) ticketList.innerHTML='';
-  const row = document.createElement('div');
-  row.className='status-item';
-  row.innerHTML = `<span><span class="code">${code}</span><br><small>${layananTitle}</small></span><span class="badge">Diterima</span>`;
-  ticketList.prepend(row);
-  e.target.reset();
 });
 
 // Nav active states
