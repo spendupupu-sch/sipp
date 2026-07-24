@@ -22,7 +22,7 @@
     --green:#0a6b2d; --red:#a30000; --red-100:#ffe2da; --shadow:none;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
   body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body); font-size:calc(16px * var(--scale)); line-height:1.55; -webkit-font-smoothing:antialiased;}
   h1,h2,h3,h4{font-family:var(--font-display); color:var(--teal-900); margin:0; line-height:1.15;}
   p{margin:0;} a{color:inherit;} img{max-width:100%;display:block;} button{font-family:inherit; cursor:pointer;}
@@ -31,53 +31,6 @@
   .visually-hidden{position:absolute; width:1px;height:1px; overflow:hidden; clip:rect(0 0 0 0);}
   .skip-link{position:absolute; left:-9999px; top:0; background:var(--amber-500); color:var(--teal-900); padding:12px 18px; z-index:200; border-radius:0 0 10px 0; font-weight:700;}
   .skip-link:focus{left:0;}
-
-  /* --- Responsive Hero Section Fix --- */
-
-/* 1. Mobile First: Stack items vertically */
-.hero .wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.search-card {
-  width: 100%;
-  max-width: 480px;
-}
-
-/* 2. Fix the search input from overflowing horizontal space */
-.search-row {
-  display: flex;
-  gap: 8px;
-  width: 100%;
-}
-
-.search-row input {
-  flex: 1;
-  min-width: 0; /* Prevents input box from pushing outside container */
-}
-
-/* 3. Keep quick stats flexible on narrow screens */
-.quick-stats {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* 4. Desktop Layout: Side-by-side for screens 768px and wider */
-@media (min-width: 768px) {
-  .hero .wrap {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .hero .wrap > div:first-child {
-    flex: 1;
-    max-width: 580px;
-  }
-}
 
   .util-bar{background:var(--teal-900); color:#fff; font-size:.82rem;}
   .util-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:7px 20px; max-width:1120px; margin:0 auto; flex-wrap:wrap;}
@@ -110,16 +63,17 @@
 
   .hero{background:linear-gradient(160deg, var(--teal-900), var(--teal-700)); color:#fff; padding:52px 0 66px; position:relative; overflow:hidden;}
   .hero .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; position:relative; z-index:2;}
+  .hero .wrap > *{min-width:0;}
   .eyebrow{display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.12); padding:6px 12px; border-radius:99px; font-size:.78rem; font-weight:600; margin-bottom:18px;}
   .eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--amber-500);}
   .hero h1{color:#fff; font-size:clamp(1.7rem, 3.2vw, 2.5rem); font-weight:800; letter-spacing:-.01em;}
-  .hero p.lede{color:rgba(255,255,255,.82); margin-top:16px; font-size:1.02rem; max-width:46ch;}
+  .hero p.lede{color:rgba(255,255,255,.82); margin-top:16px; font-size:1.02rem; max-width:46ch; overflow-wrap:break-word;}
   .hero-actions{display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;}
   .btn-primary{background:var(--amber-500); color:var(--teal-900); border:none; border-radius:10px; padding:14px 22px; font-weight:700; font-size:.94rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; min-height:48px;}
   .btn-primary:hover{background:#fff;}
   .btn-ghost{background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.5); border-radius:10px; padding:13px 20px; font-weight:600; font-size:.94rem; text-decoration:none; min-height:48px; display:inline-flex; align-items:center;}
   .btn-ghost:hover{border-color:#fff; background:rgba(255,255,255,.08);}
-  .search-card{background:#fff; border-radius:16px; padding:22px; box-shadow:0 20px 50px rgba(0,0,0,.25); color:var(--ink);}
+  .search-card{background:#fff; border-radius:16px; padding:22px; box-shadow:0 20px 50px rgba(0,0,0,.25); color:var(--ink); min-width:0;}
   .search-card h3{font-size:1.02rem; margin-bottom:4px;}
   .search-card .hint{font-size:.83rem; color:var(--ink-soft); margin-bottom:14px;}
   .search-row{display:flex; gap:8px;}
@@ -153,6 +107,7 @@
   .chip[aria-pressed="true"]{background:var(--teal-800); color:#fff;}
 
   .layanan-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+  .layanan-grid > *{min-width:0;}
   .layanan-card{background:var(--bg); border:1px solid var(--line); border-radius:var(--radius); padding:20px; display:flex; flex-direction:column; gap:9px; position:relative;}
   .layanan-card.urgent{background:var(--red-100); border-color:#eab5a5;}
   .layanan-card .icon{width:40px; height:40px; border-radius:10px; background:var(--teal-100); color:var(--teal-800); display:flex; align-items:center; justify-content:center; font-weight:800; font-family:var(--font-display); font-size:.95rem;}
@@ -186,6 +141,7 @@
   .btn-apply:hover{background:var(--teal-900);}
 
   .alur-list{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+  .alur-list > *{min-width:0;}
   .alur-step{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px 16px;}
   .alur-step .num{font-family:var(--font-mono); font-weight:700; color:var(--amber-600); font-size:1.4rem; display:block; margin-bottom:10px;}
   .alur-step h4{font-size:.92rem; margin-bottom:6px;}
@@ -196,6 +152,7 @@
   #pengajuan .section-head h2{color:#fff;}
   #pengajuan .section-head p{color:rgba(255,255,255,.75);}
   .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start;}
+  .form-grid > *{min-width:0;}
   .form-card{background:#fff; color:var(--ink); border-radius:16px; padding:18px;}
   .gform-wrap{width:100%; overflow:hidden; border-radius:10px;}
   .gform-wrap iframe{width:100%; height:1416px; max-height:80vh; border:none; display:block;}
@@ -219,6 +176,7 @@
 
   #perlindungan{background:var(--red-100);}
   .prot-card{background:#fff; border-radius:16px; padding:28px; display:grid; grid-template-columns:1.2fr .8fr; gap:28px;}
+  .prot-card > *{min-width:0;}
   .prot-card h3{font-size:1.1rem; margin-bottom:10px;}
   .prot-card p{font-size:.9rem; color:var(--ink-soft); margin-bottom:6px;}
   .prot-steps{display:flex; flex-direction:column; gap:10px; margin-top:14px;}
