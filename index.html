@@ -32,6 +32,53 @@
   .skip-link{position:absolute; left:-9999px; top:0; background:var(--amber-500); color:var(--teal-900); padding:12px 18px; z-index:200; border-radius:0 0 10px 0; font-weight:700;}
   .skip-link:focus{left:0;}
 
+  /* --- Responsive Hero Section Fix --- */
+
+/* 1. Mobile First: Stack items vertically */
+.hero .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.search-card {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* 2. Fix the search input from overflowing horizontal space */
+.search-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.search-row input {
+  flex: 1;
+  min-width: 0; /* Prevents input box from pushing outside container */
+}
+
+/* 3. Keep quick stats flexible on narrow screens */
+.quick-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 4. Desktop Layout: Side-by-side for screens 768px and wider */
+@media (min-width: 768px) {
+  .hero .wrap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero .wrap > div:first-child {
+    flex: 1;
+    max-width: 580px;
+  }
+}
+
   .util-bar{background:var(--teal-900); color:#fff; font-size:.82rem;}
   .util-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:7px 20px; max-width:1120px; margin:0 auto; flex-wrap:wrap;}
   .util-left{display:flex; gap:16px; flex-wrap:wrap; opacity:.9; align-items:center;}
@@ -445,7 +492,7 @@
     </div>
     <div>
       Jam layanan: Senin–Jumat, 08.00–15.00 WIB<br>
-      © 2026 UPT SMP Negeri 2 Pulau Punjung. Fauzul Azmi.
+      © 2026 UPT SMP Negeri 2 Pulau Punjung
     </div>
   </div>
 </footer>
